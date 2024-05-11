@@ -24,14 +24,14 @@ def arguments():
     parser.add_argument("--lr", default=1e-4, type=float)
     parser.add_argument("--weight-decay", default=0.0005, type=float)
     parser.add_argument("--momentum", default=0.9, type=float)
-    parser.add_argument("--batch_size", default=8, type=int)
-    parser.add_argument("--workers", default=4, type=int)
+    parser.add_argument("--batch_size", default=2, type=int)
+    parser.add_argument("--workers", default=8, type=int)
     parser.add_argument("--start-epoch", default=0, type=int)
     parser.add_argument("--epochs", default=50, type=int)
     parser.add_argument("--save-every", default=10, type=int)
     parser.add_argument("--resume", default="")
     parser.add_argument("--debug", action="store_true")
-    parser.add_argument("--ckpt",default="./checkpoints/checkpoint_10.pth" , type=str)
+    parser.add_argument("--ckpt",default="checkpoint_50.pth" , type=str)
     parser.add_argument("--nms_thresh", type=float, default=0.3)
 
     return parser.parse_args()
@@ -54,7 +54,7 @@ def main():
     loss_fn = DetectionCriterion(num_templates)
 
     # directory where we'll store model weights
-    weights_dir = "weights"
+    weights_dir = args.weights_dir
     if not osp.exists(weights_dir):
         os.mkdir(weights_dir)
 
