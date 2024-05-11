@@ -23,7 +23,7 @@ def arguments():
     parser.add_argument("--lr", default=1e-4, type=float)
     parser.add_argument("--weight-decay", default=0.0005, type=float)
     parser.add_argument("--momentum", default=0.9, type=float)
-    parser.add_argument("--batch_size", default=3, type=int)
+    parser.add_argument("--batch_size", default=8, type=int)
     parser.add_argument("--workers", default=4, type=int)
     parser.add_argument("--start-epoch", default=0, type=int)
     parser.add_argument("--epochs", default=50, type=int)
